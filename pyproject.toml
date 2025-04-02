@@ -1,0 +1,19 @@
+[project]
+name = "fair6-fair-pool"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Stefano Rapisarda",email = "s.rapisarda86@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "fair6_fair_pool", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
