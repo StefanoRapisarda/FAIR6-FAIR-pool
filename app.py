@@ -22,8 +22,8 @@ message = st.text_area("Enter your message or explanation (optional):")
 # Submit button
 if st.button("Submit"):
     if set(input_order) == set('FAIR') and len(input_order) == 4:
-        new_response = {'order': input_order, 'message': message}
-        responses_df = responses_df.append(new_response, ignore_index=True)
+        new_response = pd.DataFrame([{'order': input_order, 'message': message}])
+        responses_df = pd.concat([responses_df, new_response], ignore_index=True)
         responses_df.to_csv(DATA_FILE, index=False)
         st.success(f"Recorded: {input_order}")
     else:
@@ -65,4 +65,4 @@ if not responses_df.empty:
     st.dataframe(responses_df[['order', 'message']], use_container_width=True)
 
 else:
-    st.info("No responses yet. Submit your first entry!")
+    st.info("No responses yet. Submit your first entry!")import s
