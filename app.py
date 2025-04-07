@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import os
 
-st.title("FAIR Hierarchical Ordering Visualization")
+st.title("Share your opinion about FAIR")
 
 # File to save responses
 DATA_FILE = 'responses.csv'
@@ -15,8 +15,8 @@ else:
     responses_df = pd.DataFrame(columns=['order', 'message'])
 
 # Input area
-st.header("Enter Ordered Letters")
-input_order = st.text_input("Enter your hierarchical order of letters FAIR (exactly 4 letters, e.g., FAIR):").upper()
+st.header("FAIR hierarchy")
+input_order = st.text_input("Enter the letters of the FAIR hierarchy (exactly 4 letters, e.g., IRAF):").upper()
 message = st.text_area("Enter your message or explanation (optional):")
 
 # Submit button
@@ -47,11 +47,11 @@ if not responses_df.empty:
 
     # Plotting
     st.subheader("Most Frequent First Letter")
-    fig_first = px.bar(first_letter_freq, x='letter', y='count', color='letter', title="Frequency of First Letters")
+    fig_first = px.bar(first_letter_freq, x='letter', y='count', color='letter')
     st.plotly_chart(fig_first)
 
     st.subheader("Most Frequent Last Letter")
-    fig_last = px.bar(last_letter_freq, x='letter', y='count', color='letter', title="Frequency of Last Letters")
+    fig_last = px.bar(last_letter_freq, x='letter', y='count', color='letter')
     st.plotly_chart(fig_last)
 
     # Interactive frequency table
