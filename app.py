@@ -16,7 +16,7 @@ else:
 
 # Input area
 st.header("FAIR hierarchy")
-input_order = st.text_input("Enter the letters of the FAIR hierarchy (exactly 4 letters, e.g., IRAF):").upper()
+input_order = st.text_input("Enter the letters of FAIR in hierarchical order, from the most to the least important (exactly 4 letters, e.g., IRAF):").upper()
 message = st.text_area("Enter your message or explanation (optional):")
 
 # Submit button
