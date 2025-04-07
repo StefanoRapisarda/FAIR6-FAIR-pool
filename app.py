@@ -14,6 +14,14 @@ if os.path.exists(DATA_FILE):
 else:
     responses_df = pd.DataFrame(columns=['order', 'message'])
 
+st.text(
+"FAIR Principles Summary:\n"
+"F - Findable: Data should be easy to find for both humans and computers.\n"
+"A - Accessible: Once found, data should be retrievable using standard protocols.\n"
+"I - Interoperable: Data should be integrated with other data using shared standards.\n"
+"R - Reusable: Data should be well-described to allow replication and reuse."
+)
+
 # Input area
 st.header("FAIR hierarchy")
 input_order = st.text_input("Enter the letters of FAIR in hierarchical order, from the most to the least important (exactly 4 letters, e.g., IRAF):").upper()
